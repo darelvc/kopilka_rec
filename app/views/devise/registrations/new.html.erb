@@ -1,0 +1,50 @@
+<!--main-->
+<main class="main" role="main">
+  <!--wrap-->
+  <div class="wrap clearfix">
+    <!--row-->
+    <div class="row">
+    <!--content-->
+      <section class="content center full-width wow fadeInUp">
+        <div class="modal container">
+          <h3>Регистрация</h3>
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+            <div class="field f-row">
+              <%= f.label :Ваше_имя %><br />
+              <%= f.text_field :chefname, autofocus: true %>
+            </div>
+
+            <div class="field f-row">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true %>
+            </div>
+
+            <div class="field f-row">
+              <%= f.label :Пароль %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> знаков минимум)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off" %>
+            </div>
+
+            <div class="field f-row">
+              <%= f.label :Подтверждение_пароля %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            </div>
+
+            <div class="actions f-row bwrap">
+              <%= f.submit "Зарегистрироваться" %>
+            </div>
+          <% end %>
+        </div>
+      </section>
+      <!--//content-->
+    </div>
+    <!--//row-->
+  </div>
+  <!--//wrap-->
+</main>
+<!--//main-->

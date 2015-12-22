@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SocialChef</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<%= render 'layouts/header' %>
+
+	<% if alert %>
+	<div id="notice_wrapper">
+		<p class="alert"><%= alert %></p>	
+	</div>
+	<% elsif notice %>
+		<div id="notice_wrapper">
+			<p class="notice"><%= notice %></p>		
+		</div>
+	<% end %>
+
+<%= yield %>
+	
+	<%= render 'layouts/footer' %>
+
+</body>
+</html>
+
+<script>
+	$(document).ready(function() {
+		setTimeout(function() {
+			$('#notice_wrapper').fadeOut("slow", function() {
+				$this.remove();
+			});
+		}, 3500 );
+	});
+</script>

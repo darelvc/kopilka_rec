@@ -1,0 +1,40 @@
+<div class="submit_recipe container">
+	<%= form_for(@recipe, html: { multipart: true }) do |f| %>
+		<section>
+			<h2>Основное</h2>
+			<p>Все поля являются обязательными.</p>
+			<div class="f-row">
+				<div class="full">
+					<%= f.text_field :name, :placeholder => "Название рецепта" %>
+				</div>
+			</div>
+			<div class="f-row">
+				<div class="third"><%= f.text_field :pre_time, :placeholder => "Время подготовления" %></div>
+				<div class="third"><%= f.text_field :cook_time, :placeholder => "Время приготовления" %></div>
+				<div class="third"><%= f.text_field :difficulty, :placeholder => "Сложность" %></div>
+			</div>
+			<div class="f-row">
+				<div class="third"><%= f.text_field :servers, :placeholder => "На сколько людей серверовано?" %></div>
+				<div class="third"><select><option selected="selected">Выбирите категорию</option></select></div>
+			</div>
+		</section>
+		<section>
+			<h2>Описание</h2>
+			<div class="f-row">
+				<div class="full">
+				<%= f.text_area :summary, :placeholder => "Введите короткое описание" %>
+				</div>
+			</div>
+		</section>
+		<section>
+
+		<section>
+			<h2>Сам рецепт</h2>
+			<div class="f-row">
+				<%= f.text_area :description, :placeholder => "Введите сам рецепт" %>
+
+				<%= f.submit(@recipe.new_record? ? 'Создать рецепт' : 'Отредактировать рецепт', class: "button", :id => "submitRecipe") %>
+			</div>
+		</section>
+	<% end %>
+</div>

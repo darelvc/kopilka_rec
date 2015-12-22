@@ -1,0 +1,82 @@
+<!--main-->
+<main class="main" role="main">
+	<!--wrap-->
+	<div class="wrap clearfix">
+		
+		<!--row-->
+		<div class="row">
+			<header class="s-title wow fadeInLeft">
+				<h1><%= @recipe.name %></h1>
+			</header>
+			<!--content-->
+			<section class="content three-fourth">
+				<div class="row">
+				<!--recipe-->
+					<div class="recipe">
+						<!--two-third-->
+						<article class="two-third wow fadeInLeft">
+							<div class="image">
+								<%= link_to '' do %>
+									<%= image_tag("img.jpg") %>
+								<% end %>
+							</div>
+							<div class="intro"><p><%= @recipe.summary %></p></div>
+							<div class="instructions">
+								<ol>
+									<li><%= @recipe.description %></li>
+								</ol>
+							</div>
+						</article>
+						<!--//two-third-->
+						
+						<!--one-third-->
+						<article class="one-third wow fadeInDown">
+							<dl class="basic">
+								<dt>Время подготовления</dt>
+								<dd><%= @recipe.pre_time %></dd>
+								<dt>Время приготовления</dt>
+								<dd><%= @recipe.cook_time %></dd>
+								<dt>Сложность</dt>
+								<dd><%= @recipe.difficulty %></dd>
+								<dt>Серверовка</dt>
+								<dd><%= @recipe.servers %></dd>
+							</dl>
+							
+							<dl class="user">
+								<dt>Категория</dt>
+								<dd>Deserts</dd>
+								<dt>Опубликовано</dt>
+								<dd>J. J. Adams</dd>
+							</dl>
+							
+							<dl class="ingredients">
+								<dt>300g</dt>
+								<dd>Self-raising flour</dd>
+								<dt>200g</dt>
+								<dd>Butter</dd>
+								<dt>200g</dt>
+								<dd>Plain chocolate</dd>
+								<dt>2</dt>
+								<dd>Eggs</dd>
+								<dt>1 tbsp</dt>
+								<dd>Vanilla extract</dd>
+								<dt>200 g</dt>
+								<dd>Brown sugar</dd>
+								<dt>100 ml</dt>
+								<dd>Double cream</dd>
+								<dt>handful</dt>
+								<dd>Sprinkles</dd>
+							</dl>
+						</article>
+						<!--//one-third-->
+					</div>
+					<!--//recipe-->
+				</div>
+			</section>
+			<!--//content-->
+		</div>
+		<!--//row-->
+	</div>
+	<!--//wrap-->
+</main>
+<!--//main-->

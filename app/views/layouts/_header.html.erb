@@ -1,0 +1,57 @@
+<header class="head" role="banner">
+	<!--wrap-->
+	<div class="wrap clearfix">
+	<%= link_to root_path, class: "logo" do %>
+		<%= image_tag("ico/logo.png") %>
+	<% end %>
+		
+		<nav class="main-nav" role="navigation" id="menu">
+			<ul>
+				<li class="current-menu-item"><a href="index-2.html" title="Главная"><span>Главная</span></a></li>
+				<li><a href="recipes.html" title="Рецепты"><span>Рецепты</span></a>
+					<ul>
+						<li><a href="recipes2.html" title="Recipes 2">Recipes 2</a></li><li><a href="recipe.html" title="Recipe">Recipe</a></li>
+					</ul>
+				</li>
+				<li><a href="blog.html" title="Статьи"><span>Статьи</span></a>
+					<ul>
+						<li><a href="blog_single.html" title="Blog post">Blog post</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="Pages"><span>Pages</span></a>
+					<ul>
+						<li><a href="left_sidebar.html" title="Left sidebar page">Left sidebar page</a></li>
+						<li><a href="right_sidebar.html" title="Right sidebar page">Right sidebar page</a></li>
+						<li><a href="two_sidebars.html" title="Both sidebars page">Both sidebars page</a></li>
+						<li><a href="full_width.html" title="Full width page">Full width page</a></li>
+						<li><a href="login.html" title="Login page">Login page</a></li><li><a href="register.html" title="Register page">Register page</a></li>
+						<li><a href="error404.html" title="Error page">Error page</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="Features"><span>Features</span></a>
+					<ul>
+						<li><a href="animations.html" title="Animations">Animations</a></li>
+						<li><a href="grid.html" title="Grid">Grid</a></li>
+						<li><a href="shortcodes.html" title="Shortcodes">Shortcodes</a></li>
+						<li><a href="pricing.html" title="Pricing tables">Pricing tables</a></li>
+					</ul>
+				</li>
+				<li><a href="contact.html" title="Контакты"><span>Контакты</span></a></li>
+			</ul>
+		</nav>
+		
+		<nav class="user-nav" role="navigation">
+			<ul>
+				<li class="light"><a href="find_recipe.html" title="Поиск рецептов"><i class="ico i-search"></i> <span>Поиск рецептов</span></a></li>
+				<li class="medium"><a href="my_profile.html" title="Мой аккаунт"><i class="ico i-account"></i> <span>Мой аккаунт</span></a></li>
+				<li class="dark">
+				<%= link_to new_recipe_path, title: "Добавить рецепт" do %>
+					<i class="ico i-submitrecipe"></i>
+					<span>Добавить рецепт</span>
+				<% end %>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<!--//wrap-->
+</header>
