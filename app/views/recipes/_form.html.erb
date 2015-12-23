@@ -26,7 +26,17 @@
 				</div>
 			</div>
 		</section>
+
 		<section>
+			<h2>Ингредиенты</h2>
+			<%= f.fields_for :ingredients do |ing| %>
+				<%= render 'ingredient_fields', f: ing %>
+			<% end %>
+				<div class="f-row full">
+					<%= link_to_add_association 'Добавить ингредиент', f, :ingredients, class: "button" %>
+				</div>
+			
+		</section>
 
 		<section>
 			<h2>Сам рецепт</h2>
