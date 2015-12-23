@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+	before_action :authenticate_chef!
 
 	def index
 		@recipe = Recipe.all.order("created_at DESC")
@@ -16,7 +17,7 @@ class RecipesController < ApplicationController
 		#@recipe = Recipe.new(recipe_params)
 		#@chef = Chef.find(1)
 
-		@recipe = current_user.recipes.build(recipe_params)
+		@recipe = current_chef.recipes.build(recipe_params)
 
 		if @recipe.save
 			redirect_to @recipe, notice: "Новый рецепт создан успешно."
@@ -32,8 +33,7 @@ class RecipesController < ApplicationController
 	def update
 		@recipe = Recipe.find(params[:id])
 		if @recipe.update(recipe_params)
-			flash[:success] = "Ваш рецепт обновлен успешно!"
-			redirect_to recipe_path(@recipe)
+			redirect_to recipe_path(@recipe), notice: "Ваш рецепт обновлен успешно!"
 		else
 			render 'edit'
 		end
