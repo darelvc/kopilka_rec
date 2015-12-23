@@ -7,11 +7,23 @@
 		
 		<nav class="main-nav" role="navigation" id="menu">
 			<ul>
-				<li class="current-menu-item"><a href="index-2.html" title="Главная"><span>Главная</span></a></li>
-				<li><a href="recipes.html" title="Рецепты"><span>Рецепты</span></a>
-					<ul>
-						<li><a href="recipes2.html" title="Recipes 2">Recipes 2</a></li><li><a href="recipe.html" title="Recipe">Recipe</a></li>
-					</ul>
+				<% if current_page?(root_path) %>
+					<li class="current-menu-item">
+				<% else %>
+					<li>
+				<% end %>
+					<%= link_to root_path, :title => "Главная" do %>
+						<span>Главная</span>
+					<% end %>
+				</li>
+				<% if current_page?(recipes_path) %>
+					<li class="current-menu-item">
+				<% else %>
+					<li>
+				<% end %>
+					<%= link_to recipes_path, :title => "Рецепты" do %>
+						<span>Рецепты</span>
+					<% end %>
 				</li>
 				<li><a href="blog.html" title="Статьи"><span>Статьи</span></a>
 					<ul>

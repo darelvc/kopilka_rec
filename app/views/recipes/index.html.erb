@@ -16,10 +16,14 @@
 						<div class="entry one-third wow fadeInLeft">
 							<figure>
 								<%= image_tag("img6.jpg") %>
-								<figcaption><a href="recipe.html"><i class="ico i-view"></i> <span>View recipe</span></a></figcaption>
+								<figcaption>
+									<%= link_to recipe_path(recipe) do %>
+										<i class="ico i-view"></i> <span>Просмотреть рецепт</span>
+									<% end %>
+								</figcaption>
 							</figure>
 							<div class="container">
-								<h2><a href="recipe.html"><%= recipe.name %></a></h2>
+								<h2><%= link_to recipe_path(recipe) do %><%= recipe.name %><% end %></h2>
 								<div class="actions">
 									<div>
 										<div class="difficulty"><i class="ico i-medium"></i><a href="#"><%= recipe.difficulty %></a></div>

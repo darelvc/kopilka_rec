@@ -13,7 +13,10 @@ class RecipesController < ApplicationController
 	end
 
 	def create
-		@recipe = Recipe.new(recipe_params)
+		#@recipe = Recipe.new(recipe_params)
+		#@chef = Chef.find(1)
+
+		@recipe = current_user.recipes.build(recipe_params)
 
 		if @recipe.save
 			redirect_to @recipe, notice: "Новый рецепт создан успешно."
@@ -39,7 +42,7 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-		params.require(:recipe).permit(:name, :summary, :description, :difficulty, :pre_time, :cook_time, :servers)
+		params.require(:recipe).permit(:name, :summary, :description, :difficulty, :pre_time, :cook_time, :servers, :chef_id)
 	end
 
 end
