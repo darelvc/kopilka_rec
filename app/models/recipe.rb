@@ -6,9 +6,7 @@ class Recipe < ActiveRecord::Base
 	#validates :summary, presence: true, length: {minimum: 10, maximum: 150}
 	validates :description, presence: true, length: {minimum: 20, maximum: 3500}
 
-	accepts_nested_attributes_for :ingredients,
-																reject_if: proc { |attributes| attributes['name'].blank? },
-																allow_destroy: true
+	accepts_nested_attributes_for :ingredients, :reject_if => :all_blank, :allow_destroy => true
 	# accepts_nested_attributes_for :ingredients,
 	# 															reject_if: proc { |attributes| attributes['quantity'].blank? },
 	# 															allow_destroy: true										

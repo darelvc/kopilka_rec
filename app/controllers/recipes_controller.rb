@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-	before_action :authenticate_chef!
+	before_action :authenticate_chef!, except: [:index, :show]
 
 	def index
 		@recipe = Recipe.all.order("created_at DESC")
@@ -42,7 +42,7 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-		params.require(:recipe).permit(:name, :summary, :description, :difficulty, :pre_time, :cook_time, :servers, :chef_id, ingredients_attributes: [:id, :name, :quantity, :_destroy])
+		params.require(:recipe).permit(:name, :summary, :description, :difficulty, :pre_time, :cook_time, :servers, :chef_id, ingredients_attributes: [:id, :name, :quntity, :_destroy])
 	end
 
 end
