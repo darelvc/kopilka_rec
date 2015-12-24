@@ -45,14 +45,16 @@
 							<dl class="user">
 								<dt>Категория</dt>
 								<dd>Deserts</dd>
-								<dt>Опубликовано</dt>
-								<dd>J. J. Adams</dd>
+								<dt>Автор</dt>
+								<dd><%= @recipe.chef.chefname %></dd>
 							</dl>
 							
 							<dl class="ingredients">
-								<dt>300g</dt>
-								<dd>Self-raising flour</dd>
-								<dt>200g</dt>
+								<% @recipe.ingredients.each do |ing| %>
+									<dt><%= ing.quntity %></dt>
+									<dd><%= ing.name %></dd>
+								<% end %>
+								<!-- <dt>200g</dt>
 								<dd>Butter</dd>
 								<dt>200g</dt>
 								<dd>Plain chocolate</dd>
@@ -65,7 +67,7 @@
 								<dt>100 ml</dt>
 								<dd>Double cream</dd>
 								<dt>handful</dt>
-								<dd>Sprinkles</dd>
+								<dd>Sprinkles</dd> -->
 							</dl>
 						</article>
 						<!--//one-third-->
