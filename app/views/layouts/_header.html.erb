@@ -55,7 +55,17 @@
 		<nav class="user-nav" role="navigation">
 			<ul>
 				<li class="light"><a href="find_recipe.html" title="Поиск рецептов"><i class="ico i-search"></i> <span>Поиск рецептов</span></a></li>
-				<li class="medium"><a href="my_profile.html" title="Мой аккаунт"><i class="ico i-account"></i> <span>Мой аккаунт</span></a></li>
+				<li class="medium">
+					<% if chef_signed_in? %>
+						<%= link_to chef_path(current_chef), title: "Мой аккаунт" do %>
+							<i class="ico i-account"></i> <span>Мой аккаунт</span>
+						<% end %>
+					<% else %>
+						<%= link_to new_chef_session_path, title: "Войти в аккаунт" do %>
+							<i class="ico i-account"></i> <span>Войти в аккаунт</span>
+						<% end %>
+					<% end %>
+				</li>
 				<li class="dark">
 				<%= link_to new_recipe_path, title: "Добавить рецепт" do %>
 					<i class="ico i-submitrecipe"></i>

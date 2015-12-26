@@ -1,0 +1,51 @@
+<!--main-->
+<main class="main" role="main">
+	<!--wrap-->
+	<div class="wrap clearfix">
+		<!--row-->
+		<div class="row">
+			<!--content-->
+			<section class="content center full-width wow fadeInUp">
+				<div class="modal container">
+					<%= form_for(@chef, html: { multipart: true }) do |chef| %>
+						<h3>Редактировать Ваш профиль</h3>
+						<div id="message" class="alert alert-danger"></div>
+						<div class="f-row">
+							<%= chef.label :Ваше_Имя %>
+							<%= chef.text_field :chefname, :placeholder => "Ваше имя", :id => "name" %>
+						</div>
+						<div class="f-row">
+							<%= chef.label :Ваш_email %>
+							<%= chef.email_field :email, :placeholder => "Ваш email", :id => "email" %>
+						</div>
+						<div class="f-row">
+							<%= chef.label :Ваш_адресс %>
+							<%= chef.text_field :adress, :placeholder => "Ваш адресс", autocomplete: "off" %>
+						</div>
+						<div class="f-row">
+              <%= chef.label :Пароль %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> знаков минимум)</em>
+              <% end %><br />
+              <%= chef.password_field :password, autocomplete: "off" %>
+            </div>
+
+            <div class="field f-row">
+              <%= chef.label :Подтверждение_пароля %><br />
+              <%= chef.password_field :password_confirmation, autocomplete: "off" %>
+            </div>
+
+            <div class="field f-row">
+			        <%= chef.label :Текущий_пароль %> <i>(нам необходим Ваш текущий пароль для сохранения изменений)</i><br />
+			        <%= chef.password_field :current_password, autocomplete: "off" %>
+			      </div>
+
+            <div class="f-row bwrap">
+							<%= chef.submit chef_path(@chef), :value => "Сохранить" %>
+						</div>
+					<% end %>
+				</div>
+			</section>
+		</div>
+	</div>
+</main>
