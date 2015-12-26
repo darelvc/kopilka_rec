@@ -20,6 +20,8 @@ gem 'cocoon', '~> 1.2', '>= 1.2.6'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+gem 'paperclip', '~> 4.3', '>= 4.3.2'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
