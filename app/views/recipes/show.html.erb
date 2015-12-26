@@ -17,7 +17,7 @@
 						<article class="two-third wow fadeInLeft">
 							<div class="image">
 								<%= link_to '' do %>
-									<%= image_tag("img.jpg") %>
+									<%= image_tag @recipe.recipe_image.url(:large) %>
 								<% end %>
 							</div>
 							<div class="intro"><p><%= @recipe.summary %></p></div>

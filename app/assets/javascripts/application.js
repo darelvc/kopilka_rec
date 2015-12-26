@@ -10,11 +10,10 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require cocoon
-//= require turbolinks
-//= require jquery-1.11.1.min.js
-//= require wow.min.js
-//= require scripts.js
 //= require jquery
 //= require jquery_ujs
+//= require cocoon
+//= require turbolinks
+//= require wow.min.js
+//= require scripts.js
 //= require_tree .

@@ -35,16 +35,24 @@
 				<div class="f-row full">
 					<%= link_to_add_association 'Добавить ингредиент', f, :ingredients, class: "button" %>
 				</div>
-			
 		</section>
 
 		<section>
 			<h2>Сам рецепт</h2>
 			<div class="f-row">
 				<%= f.text_area :description, :placeholder => "Введите сам рецепт" %>
-
-				<%= f.submit(@recipe.new_record? ? 'Создать рецепт' : 'Отредактировать рецепт', class: "button", :id => "submitRecipe") %>
 			</div>
 		</section>
+
+		<section>
+			<h2>Фото рецепта</h2>
+			<div class="f-row full">
+				<%= f.file_field :recipe_image %>
+			</div>
+		</section>
+
+		<div class="f-row full">
+			<%= f.submit(@recipe.new_record? ? 'Создать рецепт' : 'Отредактировать рецепт', class: "button", :id => "submitRecipe") %>
+		</div>
 	<% end %>
 </div>

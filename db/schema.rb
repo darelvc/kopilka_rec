@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151223102659) do
+ActiveRecord::Schema.define(version: 20151226155946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,10 @@ ActiveRecord::Schema.define(version: 20151223102659) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "chef_id"
+    t.string   "recipe_image_file_name"
+    t.string   "recipe_image_content_type"
+    t.integer  "recipe_image_file_size"
+    t.datetime "recipe_image_updated_at"
   end
 
   add_foreign_key "ingredients", "recipes"

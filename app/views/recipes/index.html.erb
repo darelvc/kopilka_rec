@@ -15,7 +15,7 @@
 					<% recipes.each do |recipe| %>
 						<div class="entry one-third wow fadeInLeft">
 							<figure>
-								<%= image_tag("img6.jpg") %>
+								<%= image_tag recipe.recipe_image.url(:medium) %>
 								<figcaption>
 									<%= link_to recipe_path(recipe) do %>
 										<i class="ico i-view"></i> <span>Просмотреть рецепт</span>
@@ -65,7 +65,7 @@
 				</div>
 				<div class="widget">
 					<h3>Advertisment</h3>
-					<a href="#"><img src="images/advertisment.jpg" alt="" /></a>
+					<a href="#"><%= image_tag("advertisment.jpg") %></a>
 				</div>
 			</aside>
 			<!--//right sidebar-->
