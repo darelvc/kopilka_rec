@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   
   get '/index', to: "pages#index"
 
+  get '/contacts', to: "pages#contact"
+
   resources :recipes
 
   

@@ -48,7 +48,11 @@
 						<li><a href="pricing.html" title="Pricing tables">Pricing tables</a></li>
 					</ul>
 				</li>
-				<li><a href="contact.html" title="Контакты"><span>Контакты</span></a></li>
+				<li>
+					<%= link_to contacts_path, :title => "Контакты" do %>
+						<span>Контакты</span>
+					<% end %>
+				</li>
 			</ul>
 		</nav>
 		
