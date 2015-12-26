@@ -46,7 +46,7 @@
 								<dt>Категория</dt>
 								<dd>Deserts</dd>
 								<dt>Автор</dt>
-								<dd><%= @recipe.chef.chefname %></dd>
+								<dd><%= link_to "#{@recipe.chef.chefname}", chef_path(@recipe.chef) %></dd>
 							</dl>
 							
 							<dl class="ingredients">

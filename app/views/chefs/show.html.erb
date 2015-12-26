@@ -15,7 +15,7 @@
 						<h2><%= @chef.chefname %></h2> 
 					</div>
 					
-					<% if chef_signed_in? %>
+					<% if @chef.id == current_chef.id %>
 						<div class="chefs_links">
 							<%= link_to "Редактировать профиль", edit_chef_registration_path, class: "button chef" %>
 						</div>
@@ -29,7 +29,7 @@
 				<div class="three-fourth wow fadeInRight">
 					<nav class="tabs">
 						<ul>
-							<li class="active"><a href="#about" title="About me">Обо мне</a></li>
+							<li class="active"><%= link_to "Обо мне", "#about", :title => "Обо мне" %></li>
 							<li><a href="#recipes" title="My recipes">Мои рецепты</a></li>
 							<li><a href="#favorites" title="My favorites">My favorites</a></li>
 							<li><a href="#posts" title="My posts">Мои статьи</a></li>
@@ -42,15 +42,15 @@
 							<dl class="basic two-third">
 								<dt>Name</dt>
 								<dd><%= @chef.chefname %></dd>
-								<dt>Favorite cusine</dt>
-								<dd>Thai, Mexican</dd>
-								<dt>Favorite appliances</dt>
+								<dt>Адресс</dt>
+								<dd><%= @chef.adress %></dd>
+								<dt>Любимые блюда</dt>
 								<dd>Blender, sharp knife</dd>
-								<dt>Favorite spices</dt>
+								<dt>Любимые ингредиенты</dt>
 								<dd>Chilli, Oregano, Basil</dd>
-								<dt>Recipes submitted</dt>
-								<dd>9</dd>
-								<dt>Posts submitted</dt>
+								<dt>Рецептов опубликовано</dt>
+								<dd><%= @chef.recipes.count %></dd>
+								<dt>Статей опубликовано</dt>
 								<dd>9</dd>
 							</dl>
 							
