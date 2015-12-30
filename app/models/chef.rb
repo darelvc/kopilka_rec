@@ -5,6 +5,7 @@ class Chef < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :recipes
+  has_many :posts
   #before_save { self.email = email.downcase }
 	validates :chefname, presence: true, length: {minimum: 3, maximum: 40}
   #VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

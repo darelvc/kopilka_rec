@@ -25,10 +25,10 @@
 						<span>Рецепты</span>
 					<% end %>
 				</li>
-				<li><a href="blog.html" title="Статьи"><span>Статьи</span></a>
-					<ul>
-						<li><a href="blog_single.html" title="Blog post">Blog post</a></li>
-					</ul>
+				<li>
+					<%= link_to posts_path, :title => "Статьи" do %>
+						<span>Статьи</span>
+					<% end %>
 				</li>
 				<li><a href="#" title="Pages"><span>Pages</span></a>
 					<ul>

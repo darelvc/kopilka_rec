@@ -3,10 +3,12 @@ class ChefsController < ApplicationController
 	before_action :set_chef, only: [:edit, :update, :show]
 
 	def index
+
 	end
 
 	def show
 		#@recipes = current_chef.recipes.find(params[:id])
+		@recipe = Recipe.find(params[:id])
 	end
 
 	def create

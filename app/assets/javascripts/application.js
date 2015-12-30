@@ -11,9 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.uniform.min.js
+//= require jquery.slicknav.min.js
 //= require jquery_ujs
 //= require cocoon
-//= require turbolinks
 //= require wow.min.js
 //= require scripts.js
+//= require turbolinks
 //= require_tree .

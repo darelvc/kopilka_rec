@@ -1,0 +1,31 @@
+<div class="submit_recipe container">
+	<%= form_for(@post, html: { multipart: true }) do |f| %>
+		<section>
+			<h2>Название</h2>
+			<p>Все поля являются обязательными.</p>
+			<div class="f-row">
+				<div class="full">
+					<%= f.text_field :title, :placeholder => "Название статьи" %>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<h2>Введите текст статьи</h2>
+			<div class="f-row">
+				<%= f.text_area :content, :placeholder => "Введите саму статью" %>
+			</div>
+		</section>
+
+		<section>
+			<h2>Фото статьи</h2>
+			<div class="f-row full">
+				<%= f.file_field :post_image %>
+			</div>
+		</section>
+
+		<div class="f-row full">
+			<%= f.submit(@post.new_record? ? 'Создать статью' : 'Отредактировать статью', class: "button", :id => "submitRecipe") %>
+		</div>
+	<% end %>
+</div>

@@ -15,7 +15,7 @@
 						<h2><%= @chef.chefname %></h2> 
 					</div>
 					
-					<% if @chef.id == current_chef.id %>
+					<% unless current_chef == chef_session %>
 						<div class="chefs_links">
 							<%= link_to "Редактировать профиль", edit_chef_registration_path, class: "button chef" %>
 						</div>
