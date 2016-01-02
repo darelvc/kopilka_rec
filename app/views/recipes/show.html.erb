@@ -44,7 +44,11 @@
 							
 							<dl class="user">
 								<dt>Категория</dt>
-								<dd>Deserts</dd>
+								<% if @recipe.categories.any? %>
+									<dd><%= render @recipe.categories %></dd>
+								<% else %>
+									<dd>Не указана</dd>
+								<% end %>
 								<dt>Автор</dt>
 								<dd><%= link_to "#{@recipe.chef.chefname}", chef_path(@recipe.chef) %></dd>
 							</dl>
@@ -76,6 +80,56 @@
 				</div>
 			</section>
 			<!--//content-->
+
+							<!--right sidebar-->
+				<aside class="sidebar one-fourth wow fadeInRight">
+					<div class="widget nutrition entry">
+						<h3>Не хотите приготовить?</h3>
+						<figure>
+							<%= image_tag @random_recipe.recipe_image.url(:medium) %>
+							<figcaption>
+								<%= link_to recipe_path(@random_recipe) do %>
+									<i class="ico i-view"></i> <span>Просмотреть рецепт</span>
+								<% end %>
+							</figcaption>
+						</figure>
+						<div class="random_recipe">
+							<h2><%= link_to recipe_path(@random_recipe) do %><%= @random_recipe.name %><% end %></h2>
+							<div class="random_actions">
+								<ul>
+									<li><i class="ico i-medium"></i><a href="#"><%= @random_recipe.difficulty %></a></li>
+									<li><i class="ico i-likes"></i><a href="#">10</a></li>
+									<li><i class="ico i-comments"></i><a href="recipe.html#comments">7</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="widget share">
+						<ul class="boxed">
+							<li class="light"><a href="#" title="Facebook"><i class="ico i-facebook"></i> <span>Share on Facebook</span></a></li>
+							<li class="medium"><a href="#" title="Twitter"><i class="ico i-twitter"></i> <span>Share on Twitter</span></a></li>
+							<li class="dark"><a href="#" title="Favourites"><i class="ico i-favourites"></i> <span>Add to Favourites</span></a></li>
+						</ul>
+					</div>
+					
+					<!-- <div class="widget members">
+						<h3>Members who liked this recipe</h3>
+						<ul class="boxed">
+							<li><div class="avatar"><a href="my_profile.html"><img src="images/avatar1.jpg" alt="" /><span>Kimberly C.</span></a></div></li>
+							<li><div class="avatar"><a href="my_profile.html"><img src="images/avatar2.jpg" alt="" /><span>Alex J.</span></a></div></li>
+							<li><div class="avatar"><a href="my_profile.html"><img src="images/avatar3.jpg" alt="" /><span>Denise M.</span></a></div></li>
+							<li><div class="avatar"><a href="my_profile.html"><img src="images/avatar9.jpg" alt="" /><span>Jason H.</span></a></div></li>
+							<li><div class="avatar"><a href="my_profile.html"><img src="images/avatar8.jpg" alt="" /><span>Jennifer W.</span></a></div></li>
+							<li><div class="avatar"><a href="my_profile.html"><img src="images/avatar4.jpg" alt="" /><span>Anabelle Q.</span></a></div></li>
+							<li><div class="avatar"><a href="my_profile.html"><img src="images/avatar7.jpg" alt="" /><span>Thomas M.</span></a></div></li>
+							<li><div class="avatar"><a href="my_profile.html"><img src="images/avatar5.jpg" alt="" /><span>Michelle S.</span></a></div></li>
+							<li><div class="avatar"><a href="my_profile.html"><img src="images/avatar6.jpg" alt="" /><span>Bryan A.</span></a></div></li>
+						</ul>
+					</div> -->
+				</aside>
+				<!--//right sidebar-->
+
 		</div>
 		<!--//row-->
 	</div>

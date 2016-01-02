@@ -7,6 +7,9 @@ class RecipesController < ApplicationController
 
 	def show
 		@recipe = Recipe.find(params[:id])
+		#@category = Category.find(params[:id])
+
+		@random_recipe = Recipe.where.not(id: @recipe).order("RANDOM()").first
 	end
 
 	def new
@@ -42,7 +45,7 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-		params.require(:recipe).permit(:name, :summary, :description, :difficulty, :pre_time, :cook_time, :servers, :recipe_image, :chef_id, ingredients_attributes: [:id, :name, :quntity, :_destroy])
+		params.require(:recipe).permit(:name, :summary, :description, :difficulty, :pre_time, :cook_time, :servers, :recipe_image, :chef_id, ingredients_attributes: [:id, :name, :quntity, :_destroy], category_ids: [])
 	end
 
 end

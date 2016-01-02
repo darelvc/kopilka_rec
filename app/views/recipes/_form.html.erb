@@ -15,7 +15,10 @@
 			</div>
 			<div class="f-row">
 				<div class="third"><%= f.text_field :servers, :placeholder => "На сколько людей серверовано?" %></div>
-				<div class="third"><select><option selected="selected">Выбирите категорию</option></select></div>
+				<div class="third">
+					<%= f.collection_select :category_ids, Category.all, :id, :name, :include_blank => true %>
+				</div>
+				
 			</div>
 		</section>
 		<section>

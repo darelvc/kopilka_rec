@@ -1,0 +1,13 @@
+<div class="modal container">
+	<%= form_for(@category, html: { multipart: true }) do |f| %>
+		<h3>Добавить категорию</h3>
+		<div id="message" class="alert alert-danger"></div>
+		<div class="f-row">
+			<%= f.text_field :name, :placeholder => "Название категории" %>
+		</div>
+		
+		<div class="f-row bwrap">
+			<%= f.submit(@category.new_record? ? 'Создать категорию' : 'Отредактировать категорию', class: "button", :id => "submitRecipe") %>
+		</div>
+	<% end %>
+</div>

@@ -11,10 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151230074519) do
+ActiveRecord::Schema.define(version: 20151230095435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "chefs", force: :cascade do |t|
     t.string   "email",                   default: "", null: false
@@ -60,6 +64,11 @@ ActiveRecord::Schema.define(version: 20151230074519) do
     t.string   "post_image_content_type"
     t.integer  "post_image_file_size"
     t.datetime "post_image_updated_at"
+  end
+
+  create_table "recipe_categories", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|

@@ -1,0 +1,77 @@
+<!--main-->
+<main class="main" role="main">
+	<!--wrap-->
+	<div class="wrap clearfix">
+		<!--row-->
+		<div class="row">
+			<header class="s-title wow fadeInLeft">
+				<h1><%= @category.name %></h1>
+			</header>
+			
+			<!--content-->
+			<section class="content three-fourth wow fadeInUp">
+			<% @recipes.each_slice(3) do |recipes| %>
+				<div class="entries row">
+					<% recipes.each do |recipe| %>
+						<div class="entry one-third wow fadeInLeft">
+							<figure>
+								<%= image_tag recipe.recipe_image.url(:medium) %>
+								<figcaption>
+									<%= link_to recipe_path(recipe) do %>
+										<i class="ico i-view"></i> <span>Просмотреть рецепт</span>
+									<% end %>
+								</figcaption>
+							</figure>
+							<div class="container">
+								<h2><%= link_to recipe_path(recipe) do %><%= recipe.name %><% end %></h2>
+								<div class="actions">
+									<div>
+										<div class="difficulty"><i class="ico i-medium"></i><a href="#"><%= recipe.difficulty %></a></div>
+										<div class="likes"><i class="ico i-likes"></i><a href="#">10</a></div>
+										<div class="comments"><i class="ico i-comments"></i><a href="recipe.html#comments">7</a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			<% end %>
+			</section>
+			
+			<!--right sidebar-->
+			<aside class="sidebar one-fourth wow fadeInRight">
+				<div class="widget">
+					<ul class="categories right">
+						<li class="active"><a href="#">All recipes</a></li>
+						<li><a href="#">Apetizers</a></li>
+						<li><a href="#">Cocktails</a></li>
+						<li><a href="#">Deserts</a></li>
+						<li><a href="#">Eggs</a></li>
+						<li><a href="#">Equipment</a></li>
+						<li><a href="#">Events</a></li>
+						<li><a href="#">Fish</a></li>
+						<li><a href="#">Fitness</a></li>
+						<li><a href="#">Healthy</a></li>
+						<li><a href="#">Asian</a></li>
+						<li><a href="#">Mexican</a></li>
+						<li><a href="#">Pizza</a></li>
+						<li><a href="#">Kids</a></li>
+						<li><a href="#">Meat</a></li>
+						<li><a href="#">Snacks</a></li>
+						<li><a href="#">Salads</a></li>
+						<li><a href="#">Storage</a></li>
+						<li><a href="#">Vegetarian</a></li>
+					</ul>
+				</div>
+				<div class="widget">
+					<h3>Advertisment</h3>
+					<a href="#"><%= image_tag("advertisment.jpg") %></a>
+				</div>
+			</aside>
+			<!--//right sidebar-->
+		</div>
+		<!--//row-->
+	</div>
+	<!--//wrap-->
+</main>
+<!--//main-->
