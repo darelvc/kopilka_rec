@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: darelvc_kopilka
+  username: darelvc_redm
+  password: clrBCrbV9RlL
+  host: localhost
+  port: 5432
+
+
+test:
+    <<: *default
+    database: darelvc_test
+
+production:
+  <<: *default
+  database: darelvc_kopilka
+  username: darelvc_redm
+  password: clrBCrbV9RlL
+  host: localhost
+  port: 5432

@@ -1,0 +1,127 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,700italic,800,600italic,400italic);
+
+$white: #FFFFFF;
+$highlight: #d2674e;
+$dark: #22292e;
+$light: #EDEFF5;
+
+#notice_wrapper {
+	width: 100%;
+	position: absolute;
+	background: rgba(208,103,82, 0.85);
+	z-index: 999;
+	p {
+		color: $white;
+		text-align: center;
+		font-weight: 700;
+		font-size: 1.25rem;
+		padding: 1.5rem 0;
+	}
+}
+
+.i-wrote_post {
+    background-position: -247px -146px;
+    width: 25px;
+    height: 25px;
+}
+
+.user-nav-post {
+    float: right;
+    width: 370px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.random_recipe {
+	float: left;
+  display: block;
+  width: 100%;
+  padding: 17px 20px 0 !important;
+  position: relative;
+  background: #fff;
+	h2 {
+		font-size: 17px;
+    font-weight: 600;
+    padding: 0 0 17px;
+    color: #454545;
+	}
+	.random_actions	{
+		display: inline-block;
+	  width: 100%;
+	  border-top: 1px solid #ddd;
+	  padding: 15px 0 0;
+	  margin: 0 0 10px;
+		ul, li {
+			list-style: none;
+			display: inline;
+			border: none;
+			font-size: 13px;
+			padding: 9px 10px;
+			.ico {
+				margin: 0 8px -3px 0;
+			}
+			a {
+				color: #666;
+			}
+		}
+	}
+}
+
+.pagination {
+	text-align: center;
+	margin: 1rem 0 5rem 0;
+	a, .previous_page, .current, .next_page {
+		padding: 0.75rem 1rem;
+		margin: 0 .25rem;
+		border-radius: .15rem;
+		line-height: 1.25;
+		text-decoration: none;
+		background: #EDEFF5;
+		font-weight: 700;
+		font-size: .7rem;
+		font-style: normal;
+		color: $dark;
+		&:hover {
+			background: $highlight;
+			color: $white;
+		}
+	}
+	.current{
+		background: $highlight;
+		color: $white;
+	}
+	.disabled {
+		color: #C0C0C0;
+		&:hover {
+			color: #C0C0C0;
+			background: #EDEFF5;
+		}
+	}
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+@import 'recipes';
+@import 'animate';
+@import 'the_comments';

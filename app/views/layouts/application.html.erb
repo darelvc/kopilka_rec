@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KopilkaReceptov</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
+
+  <%= favicon_link_tag %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<%= render 'layouts/header' %>
+
+	<% if alert %>
+	<div id="notice_wrapper">
+		<p class="alert"><%= alert %></p>	
+	</div>
+	<% elsif notice %>
+		<div id="notice_wrapper">
+			<p class="notice"><%= notice %></p>		
+		</div>
+	<% end %>
+
+<%= yield %>
+	
+	<%= render 'layouts/footer' %>
+
+<!-- 	<div class="preloader">
+		<div class="spinner"></div>
+	</div> -->
+
+<%= javascript_include_tag "script" %>
+<%= javascript_include_tag "jquery.uniform.min" %>
+<%= javascript_include_tag "wow" %>
+</body>
+</html>
+
+<script>
+	window.dynamicNumbersBound = false;
+	var wow = new WOW();
+	WOW.prototype.show = function(box) {
+		wow.applyStyle(box);
+		if (typeof box.parentNode !== 'undefined' && hasClass(box.parentNode, 'dynamic-numbers') && !window.dynamicNumbersBound) {
+			bindDynamicNumbers();
+			window.dynamicNumbersBound = true;
+		}
+		return box.className = "" + box.className + " " + wow.config.animateClass;
+	};
+	wow.init();
+	
+	function hasClass(element, cls) {
+		return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+	}
+	
+	function bindDynamicNumbers() {
+		$('.dynamic-number').each(function() {				
+			var startNumber = $(this).text();
+			var endNumber = $(this).data('dnumber');
+			var dynamicNumberControl = $(this);
+			
+			$({numberValue: startNumber}).animate({numberValue: endNumber}, {
+				duration: 4000,
+				easing: 'swing',
+				step: function() { 
+					$(dynamicNumberControl).text(Math.ceil(this.numberValue)); 
+				}
+			});
+		});	
+	}
+	
+</script>
+
+
+<script>
+	$(document).ready(function() {
+		setTimeout(function() {
+			$('#notice_wrapper').fadeOut("slow", function() {
+				$this.remove();
+			});
+		}, 3500 );
+	});
+</script>

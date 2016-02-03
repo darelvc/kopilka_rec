@@ -1,0 +1,83 @@
+<header class="head" role="banner">
+	<!--wrap-->
+	<div class="wrap clearfix">
+	<%= link_to root_path, class: "logo" do %>
+		<%= image_tag("ico/logo.png") %>
+	<% end %>
+		
+		<nav class="main-nav" role="navigation" id="menu">
+			<ul>
+				<% if current_page?(root_path) %>
+					<li class="current-menu-item">
+				<% else %>
+					<li>
+				<% end %>
+					<%= link_to root_path, :title => "Главная" do %>
+						<span>Главная</span>
+					<% end %>
+				</li>
+				<% if current_page?(recipes_path) %>
+					<li class="current-menu-item">
+				<% else %>
+					<li>
+				<% end %>
+					<%= link_to recipes_path, :title => "Рецепты" do %>
+						<span>Рецепты</span>
+					<% end %>
+				</li>
+				<li>
+					<%= link_to posts_path, :title => "Статьи" do %>
+						<span>Статьи</span>
+					<% end %>
+				</li>
+				<li><a href="#" title="Pages"><span>Едим глазами</span></a>
+					<ul>
+						<li><a href="left_sidebar.html" title="Left sidebar page">Left sidebar page</a></li>
+						<li><a href="right_sidebar.html" title="Right sidebar page">Right sidebar page</a></li>
+						<li><a href="two_sidebars.html" title="Both sidebars page">Both sidebars page</a></li>
+						<li><a href="full_width.html" title="Full width page">Full width page</a></li>
+						<li><a href="login.html" title="Login page">Login page</a></li><li><a href="register.html" title="Register page">Register page</a></li>
+						<li><a href="error404.html" title="Error page">Error page</a></li>
+					</ul>
+				</li>
+				<li>
+					<%= link_to contacts_path, :title => "Контакты" do %>
+						<span>Контакты</span>
+					<% end %>
+				</li>
+			</ul>
+		</nav>
+		
+		<nav class="user-nav" role="navigation">
+			<ul>
+				<li class="light"><a href="find_recipe.html" title="Поиск рецептов"><i class="ico i-search"></i> <span>Поиск рецептов</span></a></li>
+				<li class="medium">
+					<% if user_signed_in? %>
+						<%= link_to user_path(current_user), title: "Мой аккаунт" do %>
+							<i class="ico i-account"></i> <span>Мой аккаунт</span>
+						<% end %>
+					<% else %>
+						<%= link_to new_user_session_path, title: "Войти в аккаунт" do %>
+							<i class="ico i-account"></i> <span>Войти в аккаунт</span>
+						<% end %>
+					<% end %>
+				</li>
+				<li class="dark">
+				<%= link_to new_recipe_path, title: "Добавить рецепт" do %>
+					<i class="ico i-submitrecipe"></i>
+					<span>Добавить рецепт</span>
+				<% end %>
+				</li>
+				<% if user_signed_in? %>
+					<li class="medium">
+						<%= link_to new_post_path, title: "Добавить статью" do %>
+						<i class="ico i-wrote_post"></i>
+						<span>Добавить статью</span>
+						<% end %>
+					</li>
+				<% end %>
+			</ul>
+		</nav>
+	</div>
+	<!--//wrap-->
+</header>

@@ -1,0 +1,36 @@
+<!--main-->
+<main class="main" role="main">
+	<!--wrap-->
+	<div class="wrap clearfix">
+		<!--row-->
+		<div class="row">
+			<header class="s-title wow fadeInLeft">
+				<h1>Рецепты</h1>
+			</header>
+			
+			<!--content-->
+			<section class="content three-fourth wow fadeInUp">
+				<%= render 'slide_recipe', obj: @recipe %>
+			</section>
+			
+			<!--right sidebar-->
+			<aside class="sidebar one-fourth wow fadeInRight">
+				<%= render 'category_menu' %>
+				<div class="widget">
+					<h3>Реклама</h3>
+					<a href="#"><%= image_tag("advertisment.jpg") %></a>
+				</div>
+			</aside>
+			<!--//right sidebar-->
+		</div>
+		<!--//row-->
+		
+		<div class="paginate wow fadeInUp">
+			<%= will_paginate @recipe %>
+		</div>
+
+	</div>
+	<!--//wrap-->
+	
+</main>
+<!--//main-->

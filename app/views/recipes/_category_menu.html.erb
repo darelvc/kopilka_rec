@@ -1,0 +1,13 @@
+<div class="widget">
+  <ul class="categories right">
+    <% if current_page?(recipes_path) %>
+      <li class="active"><%= link_to "Все рецепты", recipes_path %></li>
+    <% else %>
+      <li><%= link_to "Все рецепты", recipes_path %></li>
+    <% end %>
+      <% Category.all.each do |category| %>
+        <li><%= link_to_in_li category.name, category_path(category) %></li>
+      <% end %>
+      <li><a href="#">Видео рецепты</a></li>
+  </ul>
+</div>
